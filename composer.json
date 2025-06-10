@@ -1,0 +1,27 @@
+{
+	"name": "dream-theme/better-block-editor",
+	"description": "Better Block Editor.",
+	"type": "project",
+	"autoload": {
+		"psr-4": {
+			"BetterBlockEditor\\": ""
+		}
+	},
+	"require": {
+		"enshrined/svg-sanitize": "0.21.0"
+	},
+	"require-dev": {
+		"squizlabs/php_codesniffer": "^3.0",
+		"wp-coding-standards/wpcs": "^3.1"
+	},
+	"authors": [
+		{
+			"name": "Dream Theme"
+		}
+	],
+	"config": {
+		"allow-plugins": {
+			"dealerdirect/phpcodesniffer-composer-installer": true
+		}
+	}
+}

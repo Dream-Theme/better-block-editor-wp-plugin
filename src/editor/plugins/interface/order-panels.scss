@@ -1,0 +1,149 @@
+// This file purpose is to order all panels in block settings
+// we need this to be done on system level to be able to add our
+// additional panels in appropriate places
+
+// list of all supported <InspectorContro/>  groups
+// based on @wordpress/block-editor/src/components/inspector-controls/groups.js
+// +	default: InspectorControlsDefault,
+// +	advanced: InspectorControlsAdvanced,
+// +	background: InspectorControlsBackground,
+// +	bindings: InspectorControlsBindings,
+// +	border: InspectorControlsBorder,
+// +	color: InspectorControlsColor,
+// +	dimensions: InspectorControlsDimensions,
+// 	    effects: InspectorControlsEffects, ??? seems to be not in use
+// +	filter: InspectorControlsFilter,
+// +	list: InspectorControlsListView, // shown for core/navigation only
+// +	position: InspectorControlsPosition,
+// +	settings: InspectorControlsDefault, // Alias for default.
+// +	styles: InspectorControlsStyles,
+// +	typography: InspectorControlsTypography,
+
+// based on @wordpress/block-editor/src/components/inspector-controls-tabs/styles-tab.js
+// Styles:
+//  - color
+//  - background
+//  - filter
+//  - typography
+//  - dimensions
+//  - border
+//  - styles
+//
+// based on @wordpress/block-editor/src/components/inspector-controls-tabs/use-inspector-controls-tabs.js
+// Somewhere in styles it's expected to be also "effects" panel but i havent' found it =(
+
+// change display to grid to be able to change order of panels
+.interface-interface-skeleton__sidebar
+	.block-editor-block-inspector
+	[role="tabpanel"][id$="-styles-view"] {
+	display: grid;
+}
+
+// use css order to change order of panels
+.interface-interface-skeleton__sidebar
+	.block-editor-block-inspector
+	[role="tabpanel"][id$="-styles-view"] {
+	// "Block variants" (shown as "Styles") is a first panel in DOM
+	// it has no unambiguous selectors when collapsed
+	> div:first-child:has(> .components-panel__body:first-child) {
+		order: -500;
+	}
+	// Color
+	.color-block-support-panel {
+		order: -450;
+	}
+
+	// Background
+	.background-block-support-panel {
+		order: -400;
+	}
+
+	// Filter
+	.filter-block-support-panel {
+		order: -350;
+	}
+
+	// Typography
+	.typography-block-support-panel {
+		order: -300;
+	}
+
+	// Dimensions
+	.dimensions-block-support-panel {
+		order: -250;
+	}
+
+	// Border
+	.border-block-support-panel {
+		order: -200;
+	}
+
+	// Styles - show last, there is wrapper without unambiguous selectors
+	> :not(.components-tools-panel) {
+		order: -150;
+		// allow later order our own panels
+		display: grid;
+	}
+}
+
+// based on @wordpress/block-editor/src/components/inspector-controls-tabs/settings-tab.js
+// Settings:
+//  - default
+//  - position
+//  - bindings
+//  - advanced
+// change display to grid to be able to change order of panels
+.interface-interface-skeleton__sidebar
+	.block-editor-block-inspector
+	[role="tabpanel"][id$="-settings-view"] {
+	display: grid;
+}
+
+.interface-interface-skeleton__sidebar
+	.block-editor-block-inspector
+	[role="tabpanel"][id$="-settings-view"] {
+	// default is a first <InspectorControls> slot in DOM
+	// it has it's own wrapper without unambiguous selectors
+	// so just show it first
+	// for image first child of wrapper is components-tools-panel
+	> div:first-child:has(
+			> :where(.components-panel__body:first-child, .components-tools-panel:first-child)
+		) {
+		order: -500;
+		display: grid;
+		// show all not dt-cr panels (currently only Layout Settings) first
+		// all dt-cr blocks supposed to have positive order
+		> .components-panel__body:not(.dt-cr) {
+			order: -100;
+		}
+	}
+
+	// Position
+	.block-editor-block-inspector__position {
+		order: -400;
+	}
+
+	// Bindings
+	// FIXME need to check it in reality
+	.block-editor-bindings__panel {
+		order: -300;
+	}
+	// Advanced
+	> div:has(.block-editor-block-inspector__advanced) {
+		order: -200;
+	}
+}
+
+// Position panel
+.interface-interface-skeleton__sidebar
+	.block-editor-block-inspector
+	[role="tabpanel"][id$="-settings-view"]
+	.components-panel__body.block-editor-block-inspector__position
+	// there is wrapper 
+	> div:has(.components-base-control) {
+	display: grid;
+	// no obvious selectors for position control
+	> .components-base-control:has(.components-custom-select-control) {
+		order: -500;
+	}
+}

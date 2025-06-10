@@ -1,0 +1,5 @@
+// full display height for open menu (FSE-48)
+.wp-block-navigation__responsive-container.is-menu-open {
+	height: 100dvh;
+	box-sizing: border-box;
+}

@@ -1,0 +1,19 @@
+/*
+ * created to fix issue with core styles relying on order of elemets in DOM 
+ * as we add new element `<DtCrRefAnchor>` to keep ref and break such rules.
+ */
+.dt-cr-ref-anchor {
+	display: none !important;
+}
+
+// block-editor
+:is(.is-layout-constrained, .is-layout-flow):has(> .dt-cr-ref-anchor:first-child)
+	> :nth-child(1 of :not(.dt-cr-ref-anchor)) {
+	margin-block-start: 0;
+}
+
+:root
+	:where(.wp-site-blocks:has(> .dt-cr-ref-anchor:first-child))
+	> :nth-child(1 of :not(.dt-cr-ref-anchor)) {
+	margin-block-start: 0;
+}

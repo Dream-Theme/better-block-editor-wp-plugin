@@ -1,0 +1,6 @@
+// set appropriate position for panel in block inspector
+.interface-interface-skeleton__sidebar
+	.block-editor-block-inspector
+	.components-panel__body.dt-cr.grid__responsive-stack-on {
+	order: 300;
+}

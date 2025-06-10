@@ -1,0 +1,24 @@
+@import "../../../../base-styles/variables";
+
+/**
+ * Hide original display panel for navigation 
+ * We rely on order of panels in the editor
+ */
+body
+	.interface-interface-skeleton__sidebar
+	.block-editor-block-inspector:has(
+		.dt-cr.navigation-display-with-responsiveness
+	)
+	.components-panel__body:nth-child(2):not(
+		.dt-cr.navigation-display-with-responsiveness
+	) {
+	display: none;
+}
+
+body
+	.interface-interface-skeleton__sidebar
+	.block-editor-block-inspector
+	.dt-cr.navigation-display-with-responsiveness
+	.components-base-control__help {
+	@include components-base-control__help;
+}

@@ -1,0 +1,18 @@
+/**
+ * Some variables @see https://github.com/WordPress/gutenberg/blob/trunk/packages/base-styles/_variables.scss
+ */
+
+/**
+ * Block paddings.
+ */
+
+// Padding for blocks with a background color (e.g. paragraph or group).
+$block-bg-padding--v: 1.25em;
+$block-bg-padding--h: 2.375em;
+
+// help messages in editor sidebar (to match common style)
+@mixin components-base-control__help {
+	color: #757575;
+	margin-top: 8px;
+	margin-bottom: 0px;
+}

@@ -1,0 +1,26 @@
+// RESET styling for original responsiveness
+// ("mobile" overlayMenu settings i.e. media query min-width: 600px) by increasing priority of selectors
+// then we use THE SAME selectors "last step" to set up responsiveness
+// for original styling approach see https://github.com/WordPress/WordPress/blob/6.4.3/wp-includes/blocks/navigation/style.css
+
+.wp-block-navigation.dt-cr-responsive-navigation {
+	& .wp-block-navigation__responsive-container-open:not(.always-shown) {
+		display: flex;
+	}
+
+	&
+		.wp-block-navigation__responsive-container:not(.hidden-by-default):not(
+			.is-menu-open
+		) {
+		display: none;
+		position: fixed;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+
+		& .wp-block-navigation__responsive-container-close {
+			display: revert;
+		}
+	}
+}

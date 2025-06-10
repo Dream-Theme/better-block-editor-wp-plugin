@@ -1,0 +1,86 @@
+{
+	"name": "better-block-editor",
+	"version": "0.1.0",
+	"description": "This plugin adds responsiveness to Row, Grid, and other blocks. It also introduces animation on scroll, responsive visibility, and more!",
+	"author": "Dream Theme",
+	"license": "GPL-2.0-or-later",
+	"main": "build/index.js",
+	"keywords": [
+		"gutenberg",
+		"blocks",
+		"gutenberg blocks",
+		"editor",
+		"block"
+	],
+	"scripts": {
+		"build": "wp-scripts build --webpack-copy-php",
+		"format": "wp-scripts format src/",
+		"lint:css": "wp-scripts lint-style",
+		"lint:js": "wp-scripts lint-js src/",
+		"packages-update": "wp-scripts packages-update",
+		"plugin-zip": "wp-scripts plugin-zip",
+		"start": "wp-scripts start --webpack-copy-php",
+		"update-version": "node ./build/update-version.js",
+		"prepare": "husky"
+	},
+	"lint-staged": {
+		"./src/**/*.{js,jsx,ts,tsx}": [
+			"wp-scripts lint-js --max-warnings=0"
+		]
+	},
+	"devDependencies": {
+		"@babel/plugin-syntax-dynamic-import": "^7.8.3",
+		"@babel/preset-env": "^7.26.0",
+		"@babel/preset-react": "^7.26.3",
+		"@wordpress/components": "^29.1.1",
+		"@wordpress/compose": "^7.15.1",
+		"@wordpress/data": "^10.15.1",
+		"@wordpress/dependency-extraction-webpack-plugin": "6.15.0",
+		"@wordpress/dom-ready": "^4.15.0",
+		"@wordpress/edit-post": "^8.15.1",
+		"@wordpress/edit-site": "^6.15.1",
+		"@wordpress/element": "^6.15.1",
+		"@wordpress/hooks": "^4.15.0",
+		"@wordpress/i18n": "^5.15.1",
+		"@wordpress/icons": "^10.15.1",
+		"@wordpress/interface": "^9.0.1",
+		"@wordpress/plugins": "^7.15.1",
+		"@wordpress/preferences": "^4.15.1",
+		"@wordpress/prettier-config": "^4.15.0",
+		"@wordpress/private-apis": "^1.15.0",
+		"@wordpress/scripts": "30.8.1",
+		"ajv": "8.17.1",
+		"clsx": "2.1.1",
+		"eslint-import-resolver-webpack": "0.13.10",
+		"glob": "11.0.0",
+		"husky": "9.1.7",
+		"jQuery": "^1.7.4",
+		"lint-staged": "15.5.1",
+		"url-change-event": "0.1.7",
+		"wp-prettier": "^3.0.3"
+	},
+	"dependencies": {
+		"@wordpress/block-editor": "^14.10.1",
+		"react-inlinesvg": "4.2.0",
+		"@wordpress/rich-text": "7.21.0",
+		"classnames": "^2.5.1",
+		"uuid": "11.0.4"
+	},
+	"files": [
+		"Base/**",
+		"Core/**",
+		"dist/**",
+		"Modules/**",
+		"admin/**",
+		"vendor/composer/**",
+		"vendor/enshrined/**",
+		"vendor/autoload.php",
+		"languages/**",
+		"public/**",
+		"composer.json",
+		"composer.lock",
+		"license.*",
+		"readme.*",
+		"*.php"
+	]
+}

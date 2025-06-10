@@ -1,0 +1,35 @@
+@import "@dt-cr/base-styles/navigation-height-for-sticky";
+
+// implement sticky header (FSE-48)
+header:has(> .is-position-sticky) {
+	display: contents;
+}
+
+.is-position-sticky.is-pin-ready.is-pin-ready {
+	transition-property:
+		background,
+		border-color,
+		box-shadow,
+		-webkit-backdrop-filter,
+		backdrop-filter;
+	transition-duration: 0.2s;
+}
+
+// individual classes for pinned block styling
+.is-position-sticky.is-pinned.has-pinned-background {
+	background: var(--wp-sticky--pinned-background, initial) !important;
+}
+
+.is-position-sticky.is-pinned.has-pinned-blur {
+	-webkit-backdrop-filter: blur(var(--wp-sticky--pinned-backdrop-blur, 0px));
+	backdrop-filter: blur(var(--wp-sticky--pinned-backdrop-blur, 0px));
+}
+
+.is-position-sticky.is-pinned.has-pinned-border {
+	// border-color is defined in element inline style, so need to override
+	border-color: var(--wp-sticky--pinned-border-color, initial) !important;
+}
+
+.is-position-sticky.is-pinned.has-pinned-shadow {
+	box-shadow: var(--wp-sticky--pinned-shadow, initial);
+}

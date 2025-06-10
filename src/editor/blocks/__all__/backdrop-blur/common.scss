@@ -1,0 +1,6 @@
+@import "@dt-cr/base-styles/navigation-height-for-sticky";
+
+.has-backdrop-blur {
+	-webkit-backdrop-filter: blur(var(--wp--backdrop-blur, 0px));
+	backdrop-filter: blur(var(--wp--backdrop-blur, 0px));
+}

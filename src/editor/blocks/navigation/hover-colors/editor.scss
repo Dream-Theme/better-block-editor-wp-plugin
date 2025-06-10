@@ -1,0 +1,10 @@
+// set appropriate position for panel in block inspector
+// show group="styles" wrapper with "Hover Color" just after "Color"
+.interface-interface-skeleton__sidebar
+	.block-editor-block-inspector
+	[role="tabpanel"][id$="-styles-view"]
+	> :not(.components-tools-panel):has(
+		> .components-tools-panel.navigation-hover-color-block-support-panel
+	) {
+	order: -440;
+}

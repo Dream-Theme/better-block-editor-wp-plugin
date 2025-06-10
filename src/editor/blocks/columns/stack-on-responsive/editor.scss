@@ -1,0 +1,15 @@
+/**
+ * Hide original "Settings" Tools panel 
+ * We rely on order of panels in the editor
+ */
+body
+	.interface-interface-skeleton__sidebar
+	.block-editor-block-inspector:has(.components-tools-panel.stack-on-with-responsiveness) {
+	.components-tools-panel:nth-child(1):not(.components-tools-panel.stack-on-with-responsiveness) {
+		display: none;
+	}
+	// add margin top to reverse order as custom breakpoint widget has no bottom margin here =(
+	.components-tools-panel.stack-on-with-responsiveness .stack-on-reverse-order {
+		margin-top: 16px;
+	}
+}

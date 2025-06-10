@@ -1,0 +1,7 @@
+{
+	"rules": {
+		"prettier/prettier": "off",
+		"@wordpress/no-unsafe-wp-apis": "off",
+		"camelcase": "off"
+	}
+}

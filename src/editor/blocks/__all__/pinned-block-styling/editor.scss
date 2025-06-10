@@ -1,0 +1,35 @@
+// set appropriate position for panel in block inspector
+.interface-interface-skeleton__sidebar
+	.block-editor-block-inspector
+	[role="tabpanel"][id$="-styles-view"]
+	.components-tools-panel.dt-cr.pinned-block-styling {
+	order: 400;
+}
+
+// !!! ATTENTION !!! check also pinned block overlap editor.scss file
+// settings for position panel are present there as well
+// display help message just after position control
+.interface-interface-skeleton__sidebar
+	.block-editor-block-inspector
+	[role="tabpanel"][id$="-settings-view"]
+	.block-editor-block-inspector__position
+	.components-tools-panel-item:has(.dt-cr__pinned-block-styling-help)
+	// first child is wrapper
+	> :first-child {
+	display: grid;
+}
+
+.interface-interface-skeleton__sidebar
+	.block-editor-block-inspector
+	[role="tabpanel"][id$="-settings-view"]
+	.block-editor-block-inspector__position
+	.components-tools-panel-item:has(.dt-cr__pinned-block-styling-help) {
+	// no obvious selectors for position control
+	.components-base-control:has(.components-custom-select-control) {
+		order: -500;
+	}
+
+	.components-base-control.dt-cr__pinned-block-styling-help {
+		order: -450;
+	}
+}
