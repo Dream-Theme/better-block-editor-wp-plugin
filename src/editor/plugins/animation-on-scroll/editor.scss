@@ -1,0 +1,7 @@
+// add order to display this button in appropriate places
+:where(.block-editor, .edit-site)
+	.editor-header
+	.editor-header__settings
+	.dt-cr-animation-reset-wrapper {
+	order: -80;
+}

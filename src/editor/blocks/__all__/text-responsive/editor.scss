@@ -1,0 +1,12 @@
+@import "../../../../base-styles/variables";
+
+// set appropriate position for panel in block inspector
+.interface-interface-skeleton__sidebar
+	.block-editor-block-inspector
+	.components-panel__body.dt-cr.text-responsive {
+	order: 300;
+
+	.components-base-control__help {
+		@include components-base-control__help;
+	}
+}

@@ -1,0 +1,38 @@
+// hide prevent shrinking control by default
+.interface-interface-skeleton__sidebar
+	.block-editor-block-inspector
+	.components-tools-panel.dimensions-block-support-panel
+	.dt-cr__all__flex-item-prevent-shrinking {
+	display: none;
+}
+
+// show prevent shrinking control if we have width radio toggle shown
+.interface-interface-skeleton__sidebar
+	.block-editor-block-inspector
+	.components-tools-panel.dimensions-block-support-panel:has(
+		.components-toggle-group-control[role="radiogroup"] [value="fit"]
+	):has(.components-toggle-group-control[role="radiogroup"] [value="fill"]):has(
+		.components-toggle-group-control[role="radiogroup"] [value="fixed"]
+	)
+	.dt-cr__all__flex-item-prevent-shrinking {
+	display: block;
+}
+
+// make height control displayed AFTER prevent shrinking control
+// (or last in dimensions tools panel if there is no prevent shrinking control)
+.interface-interface-skeleton__sidebar
+	.block-editor-block-inspector
+	.components-tools-panel.dimensions-block-support-panel
+	.components-tools-panel-item:has(.block-editor-height-control) {
+	order: 100;
+}
+
+// display prevent shrinking control just BEFORE height control
+// (or last in dimensions tools panel if there is no height control)
+.interface-interface-skeleton__sidebar
+	.block-editor-block-inspector
+	.components-tools-panel.dimensions-block-support-panel
+	.dt-cr__all__flex-item-prevent-shrinking {
+	grid-column: 1 /-1;
+	order: 99;
+}

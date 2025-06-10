@@ -1,0 +1,34 @@
+/**
+ * The following styles get applied both on the front of your site
+ * and in the editor.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+.dt-cr-svg-icon {
+	border: none;
+	display: flex;
+	justify-content: var(--svg-alignment, left);
+
+	svg {
+		height: auto;
+		max-width: 100%;
+		width: var(--svg-width, auto);
+		transition: color 0.1s, fill 0.1s, stroke 0.1s;
+	}
+
+	& > .svg-wrapper {
+		font-size: var(--svg-width,auto);
+		line-height: 1;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		transition: background-color 0.1s, border-color 0.1s;
+		&:where([style*=border-width]) {
+			border-style: solid;
+		}
+	}
+}
+.has-border-color > .svg-wrapper {
+	border-style: solid;
+	border-width: 0;
+}

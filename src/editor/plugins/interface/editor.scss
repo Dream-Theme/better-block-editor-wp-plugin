@@ -1,0 +1,20 @@
+body .block-editor-block-panel-inner:not(.is-opened) {
+	padding: 16px 0;
+}
+
+// set order in edior top toolbar settings panel to add our buttons later in appropriate places
+:where(.block-editor, .edit-site) .editor-header .editor-header__settings .editor-preview-dropdown {
+	order: -100;
+}
+
+// style copyright in editor footer
+#site-editor .interface-interface-skeleton__footer,
+#editor .interface-interface-skeleton__footer {
+	justify-content: space-between;
+	// style according to block-editor-block-breadcrumb
+	.dt-cr-copyright {
+		line-height: 24px;
+		padding: 0 18px;
+		color: rgb(117, 117, 117);
+	}
+}

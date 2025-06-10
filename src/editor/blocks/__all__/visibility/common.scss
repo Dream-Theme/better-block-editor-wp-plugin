@@ -1,0 +1,12 @@
+/* 
+actually :not(.dt-cr-visibility-helper) has sense only for editor content and doesn't affect frontent
+but we can not apply styles to editor content only
+*/
+body:not(.dt-cr-visibility-helper) .dt-cr-visibility-hidden {
+	display: none !important;
+}
+
+.dt-cr-visibility-hidden.has-warning,
+.dt-cr-visibility-visible.has-warning {
+	display: flex !important;
+}

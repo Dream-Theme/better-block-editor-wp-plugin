@@ -1,0 +1,14 @@
+.interface-interface-skeleton__sidebar
+	.block-editor-block-inspector
+	[role="tabpanel"][id$="-settings-view"]
+	.block-editor-block-inspector__position:has(.dt-cr__hide-position-help) {
+	.dt-cr__hide-position-help {
+		display: none;
+	}
+	// no obvious selectors for position control
+	.components-base-control:first-child:has(.components-custom-select-control) 
+	// hide core help message in position control
+	.components-base-control__help {
+		display: none;
+	}
+}

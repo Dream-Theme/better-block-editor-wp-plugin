@@ -1,0 +1,42 @@
+/**
+ * The following styles get applied inside the editor only.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+
+.dt-cr-svg-icon {
+	&.has-svg-fill-color svg {
+		fill: var(--svg-fill-color);
+	}
+
+	&.has-svg-color svg {
+		color: var(--svg-color);
+		stroke: var(--svg-color);
+	}
+
+	&.has-svg-background-color > .svg-wrapper {
+		background-color: var(--svg-background-color);
+	}
+
+	&.has-svg-hover-fill-color > .svg-wrapper:hover svg {
+		fill: var(--svg-hover-fill-color);
+	}
+
+	&.has-svg-hover-color > .svg-wrapper:hover svg {
+		color: var(--svg-hover-color);
+		stroke: var(--svg-hover-color);
+	}
+
+	&.has-svg-hover-background-color > .svg-wrapper:hover {
+		background-color: var(--svg-hover-background-color);
+	}
+
+	&.has-svg-hover-border-color > .svg-wrapper:hover {
+		border-color: var(--svg-hover-border-color) !important;
+	}
+}
+
+// set appropriate position for color panel in block inspector
+body .interface-interface-skeleton__sidebar .block-editor-block-inspector [role="tabpanel"][id$="-styles-view"] > div:has( .components-tools-panel.svg-icon-color-panel){
+	order: -300;
+}

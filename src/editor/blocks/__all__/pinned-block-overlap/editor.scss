@@ -1,0 +1,31 @@
+// !!! ATTENTION !!! check alsopinned block styling editor.scss file
+// settings for position panel are present there as well
+// display overlap control just after position control and it's help if any
+.interface-interface-skeleton__sidebar
+	.block-editor-block-inspector
+	[role="tabpanel"][id$="-settings-view"]
+	.block-editor-block-inspector__position
+	.components-tools-panel-item:has(.dt-cr__pinned-block-overlap-control)
+	// first child is wrapper
+	> :first-child {
+	display: grid;
+}
+
+.interface-interface-skeleton__sidebar
+	.block-editor-block-inspector
+	[role="tabpanel"][id$="-settings-view"]
+	.block-editor-block-inspector__position
+	.components-tools-panel-item:has(.dt-cr__pinned-block-overlap-control) {
+	// no obvious selectors for position control
+	.components-base-control:has(.components-custom-select-control) {
+		// there is help message after this element or it's the last one
+		margin-bottom: 0;
+	}
+
+	// this element supposed to be last in "Position" panel
+	.components-base-control:has(.dt-cr__pinned-block-overlap-control) {
+		order: 100;
+		margin-top: 16px;
+		margin-bottom: 0;
+	}
+}

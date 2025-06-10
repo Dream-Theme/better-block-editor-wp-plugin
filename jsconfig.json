@@ -1,0 +1,10 @@
+{
+	"compilerOptions": {
+		"baseUrl": ".",
+		"paths": {
+			"@dt-cr/*": [ "./src/*" ],
+			"dt-cr/editor-css-store": [ "./src/editor-css-store" ]
+		}
+	},
+	"include": [ "./src/**/*" ]
+}

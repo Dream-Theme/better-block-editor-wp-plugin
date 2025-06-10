@@ -1,0 +1,11 @@
+// this css rule required in both editor and editor-content
+.dt-cr-block-toolbar-hidden {
+	visibility: hidden;
+}
+
+// set appropriate position for panel in block inspector
+.interface-interface-skeleton__sidebar
+	.block-editor-block-inspector
+	.components-panel__body.dt-cr.animation-on-scroll {
+	order: 500;
+}
